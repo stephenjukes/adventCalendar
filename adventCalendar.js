@@ -88,10 +88,8 @@ function hasArrived(dateOpened) {
 
 function isNext(dateOpened) {
     const lastOpened = [...document.querySelectorAll(".open")]
-        .map(open => open.closest(".window").id)
+        .map(open => Number(open.closest(".window").id))
         .sort((a, b) => b - a);
-
-    console.log(lastOpened);
 
     const nextToOpen = lastOpened[0] + 1 || 1;
 
